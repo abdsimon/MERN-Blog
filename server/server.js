@@ -22,8 +22,8 @@ mongoose.connect(process.env.MONG_URI,{dbName:"BlogsApp"})
   .catch((err) => console.error(err));
 
 // Routes
-//const postsRouter = require('./');
-//app.use('/', postsRouter);
+const postsRouter = require('./routes/posts');
+app.use('/posts', postsRouter);
 
 // Start the server
 app.listen(process.env.PORT, () => {

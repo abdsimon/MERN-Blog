@@ -10,7 +10,7 @@ const PostForm = () => {
     e.preventDefault();
 
     // Send a POST request to add a new post
-    axios.post('http://localhost:5000/posts/add', { title, content })
+    axios.post('http://localhost:6000/posts/add', { title, content })
       .then(response => {
         console.log(response.data);
         // Clear the form fields after successfully adding the post
