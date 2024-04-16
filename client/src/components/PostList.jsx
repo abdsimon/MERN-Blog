@@ -8,7 +8,6 @@ const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Fetch all posts from the backend API when the component mounts
     axios.get('http://localhost:6000/')
       .then(response => {
         setPosts(response.data);

@@ -15,7 +15,6 @@ const PostForm = () => {
     axios.post('http://localhost:6000/posts/add', { title, content })
       .then(response => {
         console.log(response.data);
-        // Clear the form fields after successfully adding the post
         setTitle('');
         setContent('');
       })
