@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+
 
 // Middleware
 app.use(cors());
@@ -22,10 +22,10 @@ mongoose.connect(process.env.MONG_URI,{dbName:"BlogsApp"})
   .catch((err) => console.error(err));
 
 // Routes
-const postsRouter = require('./');
-app.use('/', postsRouter);
+//const postsRouter = require('./');
+//app.use('/', postsRouter);
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is  running on port `, process.env.PORT);
 });
