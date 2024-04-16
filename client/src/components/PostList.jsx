@@ -1,14 +1,15 @@
-
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     // Fetch all posts from the backend API when the component mounts
-    axios.get('')
+    axios.get('http://localhost:6000/')
       .then(response => {
         setPosts(response.data);
       })
