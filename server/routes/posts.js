@@ -16,30 +16,5 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/:id').get((req, res) => {
-    Post.findById(req.params.id)
-        .then(post => res.json(post))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
-router.route('/:id').delete((req, res) => {
-    Post.findByIdAndDelete(req.params.id)
-        .then(() => res.json('Post deleted.'))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
-router.route('/update/:id').post((req, res) => {
-    Post.findById(req.params.id)
-        .then(post => {
-            post.title = req.body.title;
-            post.content = req.body.content;
-
-            post.save()
-                .then(() => res.json('Post updated!'))
-                .catch(err => res.status(400).json('Error: ' + err));
-        })
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
 module.exports = router;
 
