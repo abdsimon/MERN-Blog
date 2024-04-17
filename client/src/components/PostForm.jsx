@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import axios from 'axios';
+import baseUrl from '../config/api';
 
 
 
@@ -12,7 +13,7 @@ const PostForm = () => {
     e.preventDefault();
 
     // Send a POST request to add a new post
-    axios.post('http://localhost:6000/posts/add', { title, content })
+    axios.post( baseUrl+'/posts/add', { title, content })
       .then(response => {
         console.log(response.data);
         setTitle('');

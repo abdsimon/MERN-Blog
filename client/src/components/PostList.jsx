@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import baseUrl from '../config/api';
 
 
 
@@ -8,7 +9,7 @@ const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:6000/posts')
+    axios.get(baseUrl+'/posts')
       .then(response => {
         setPosts(response.data);
       })

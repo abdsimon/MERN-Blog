@@ -9,6 +9,7 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     const { title, content } = req.body;
+    console.log(title, content);
     const newPost = new Post({ title, content });
 
     newPost.save()
