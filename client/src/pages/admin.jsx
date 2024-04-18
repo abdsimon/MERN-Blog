@@ -5,7 +5,7 @@ import baseUrl from '../config/api';
 
 
 
-const PostForm = () => {
+const AdminForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -42,4 +42,4 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+export default AdminForm;

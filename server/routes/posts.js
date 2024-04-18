@@ -17,5 +17,12 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:blogId').get((req, res) => {
+    const {blogId} = req.params;
+    const blog = Post.findById(blogId)
+        .then(blog => res.json(blog))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
 

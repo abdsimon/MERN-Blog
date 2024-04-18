@@ -11,10 +11,10 @@ const Navbar = () => {
             </div>
             <ul className="nav-links">
                 <li>
-                    <Link to="./PostList">Home</Link>
+                    <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/add">Add Post</Link>
+                    <Link to="/admin">Add Post</Link>
                 </li>
             </ul>
         </nav>
