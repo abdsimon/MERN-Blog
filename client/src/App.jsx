@@ -1,19 +1,28 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import Navbar from './components/Navbar';
-import PostList from './components/PostList';
-import PostForm from './components/PostForm';
-import './App.css'; 
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import PostList from "./components/PostList";
+import PostForm from "./components/PostForm";
+
+// Pages
+
+// Home ==>  PostList
+
+// Admin ==> PostForm
+
+const NotFound = () => <div>Not found 404</div>;
 
 const App = () => {
   return (
-   
-      <div>
-         <PostList />
-         <PostForm />
-         <Navbar />
-      </div>
-  
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<PostList />} />
+        <Route path="/admin" element={<PostForm />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 };
 

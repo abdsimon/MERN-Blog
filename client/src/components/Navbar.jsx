@@ -11,7 +11,7 @@ const Navbar = () => {
             </div>
             <ul className="nav-links">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="./PostList">Home</Link>
                 </li>
                 <li>
                     <Link to="/add">Add Post</Link>
