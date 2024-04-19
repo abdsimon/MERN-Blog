@@ -8,16 +8,19 @@ import baseUrl from '../config/api';
 const AdminForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [image, setImage] = useState('');
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Send a POST request to add a new post
-    axios.post( baseUrl+'/posts/add', { title, content })
+    axios.post( baseUrl+'/posts/add', { title, content, image })
       .then(response => {
         console.log(response.data);
         setTitle('');
         setContent('');
+        setContent('')
       })
       .catch(error => {
         console.error('Error adding post:', error);
@@ -32,6 +35,12 @@ const AdminForm = () => {
           <label>Title:</label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
+
+        <div>
+          <label>Image:</label>
+          <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
+        </div>
+
         <div>
           <label>Content:</label>
           <textarea value={content} onChange={(e) => setContent(e.target.value)} />

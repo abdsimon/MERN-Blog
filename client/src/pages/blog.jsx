@@ -26,7 +26,8 @@ export default function Blog() {
     if(!post) return <div>Blog not found</div>
 
   return (
-    <div>
+    <div className='blog'>
+      {post?.image && <img src={post.image}/>}
         <h1>{post.title}</h1>
         <time>{post.date}</time>
         <p>{post.content}</p>

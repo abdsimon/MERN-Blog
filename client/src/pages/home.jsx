@@ -21,11 +21,14 @@ const Home = () => {
   return (
     <div>
       <h1>Blog Posts</h1>
+
+      <div className="blogs">
       {posts.map((post) => (
         <div key={post._id}>
           <Link to={`/blog/${post._id}`}>{post.title}</Link>
         </div>
       ))}
+      </div>
     </div>
   );
 };

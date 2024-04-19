@@ -8,9 +8,9 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const { title, content } = req.body;
-    console.log(title, content);
-    const newPost = new Post({ title, content });
+    const { title, content,image} = req.body;
+    console.log(title, content,image);
+    const newPost = new Post({ title, content,image });
 
     newPost.save()
         .then(() => res.json('Post added!'))
@@ -23,6 +23,15 @@ router.route('/:blogId').get((req, res) => {
         .then(blog => res.json(blog))
         .catch(err => res.status(400).json('Error: ' + err));
 });
+
+
+router.route('/:id').put((req, res) => {
+    Post.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => res.json('Post updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 
 module.exports = router;
 
